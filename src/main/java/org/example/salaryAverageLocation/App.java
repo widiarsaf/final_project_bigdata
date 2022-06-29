@@ -1,4 +1,4 @@
-package org.example.salaryAverageStatus;
+package org.example.salaryAverageLocation;
 
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
@@ -12,15 +12,15 @@ public class App
 {
     public static void main( String[] args )
     {
-        JobConf conf = new JobConf(org.example.salaryAverageStatus.App.class);
+        JobConf conf = new JobConf(org.example.salaryAverageLocation.App.class);
         conf.setJobName("Salary Average");
 
         conf.setOutputKeyClass(Text.class);
         conf.setOutputValueClass(IntWritable.class);
 
-        conf.setMapperClass(salaryAverageStatusMapper.class);
-        conf.setCombinerClass(salaryAverageStatusReducer.class);
-        conf.setReducerClass(salaryAverageStatusReducer.class);
+        conf.setMapperClass(salaryAverageLocationMapper.class);
+        conf.setCombinerClass(salaryAverageLocationReducer.class);
+        conf.setReducerClass(salaryAverageLocationReducer.class);
 
         conf.setInputFormat(TextInputFormat.class);
         conf.setOutputFormat(TextOutputFormat.class);
