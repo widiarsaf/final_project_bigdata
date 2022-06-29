@@ -1,0 +1,4 @@
+org\example\salaryAverage\App.class
+org\example\App.class
+org\example\salaryAverage\salaryAverageMapper.class
+org\example\salaryAverage\salaryAverageReducer.class
