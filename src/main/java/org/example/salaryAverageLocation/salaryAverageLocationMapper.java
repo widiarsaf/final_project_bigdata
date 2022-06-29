@@ -17,7 +17,7 @@ public class salaryAverageLocationMapper extends MapReduceBase implements org.ap
         String line = value.toString();
 
         String[] split = line.split(",");
-        String jobTitle = split[6].trim();
+        String jobTitle = split[5].trim();
         System.out.println(jobTitle);
         String salarySplit = split[3];
         System.out.println(salarySplit);
