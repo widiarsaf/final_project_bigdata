@@ -1,4 +1,4 @@
-package org.example.salaryAverage;
+package org.example.salarySummary;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
@@ -9,8 +9,7 @@ import org.apache.hadoop.mapred.Reporter;
 
 import java.io.IOException;
 
-
-public class salaryAverageMapper extends MapReduceBase implements org.apache.hadoop.mapred.Mapper<LongWritable, Text, Text, IntWritable> {
+public class salarySummaryMapper extends MapReduceBase implements org.apache.hadoop.mapred.Mapper<LongWritable, Text, Text, IntWritable> {
     private IntWritable WritableValue = new IntWritable(0);
     private Text jobTitleText = new Text();
     @Override
@@ -18,7 +17,7 @@ public class salaryAverageMapper extends MapReduceBase implements org.apache.had
         String line = value.toString();
 
         String[] split = line.split(",");
-        String jobTitle = split[2].trim();
+        String jobTitle = split[7].trim();
         System.out.println(jobTitle);
         String salarySplit = split[3];
         System.out.println(salarySplit);
